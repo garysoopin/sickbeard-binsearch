@@ -1072,7 +1072,7 @@ class ConfigProviders:
     @cherrypy.expose
     def saveProviders(self, nzbs_org_uid=None, nzbs_org_hash=None,
                       nzbmatrix_username=None, nzbmatrix_apikey=None,
-                      nzbs_r_us_uid=None, nzbs_r_us_hash=None, newznab_string=None,
+                      nzbs_r_us_uid=None, nzbs_r_us_hash=None, binsearch_max=None, binsearch_alt=None, newznab_string=None,
                       tvtorrents_digest=None, tvtorrents_hash=None, 
                       newzbin_username=None, newzbin_password=None,
                       provider_order=None):
@@ -1125,6 +1125,8 @@ class ConfigProviders:
                 sickbeard.NZBS = curEnabled
             elif curProvider == 'nzbs_r_us':
                 sickbeard.NZBSRUS = curEnabled
+            elif curProvider == 'binsearch':
+                sickbeard.BINSEARCH = curEnabled
             elif curProvider == 'nzbmatrix':
                 sickbeard.NZBMATRIX = curEnabled
             elif curProvider == 'newzbin':
@@ -1147,6 +1149,9 @@ class ConfigProviders:
 
         sickbeard.NZBS_UID = nzbs_org_uid.strip()
         sickbeard.NZBS_HASH = nzbs_org_hash.strip()
+
+        sickbeard.BINSEARCH_MAX = binsearch_max
+        sickbeard.BINSEARCH_ALT = binsearch_alt.strip()
 
         sickbeard.NZBSRUS_UID = nzbs_r_us_uid.strip()
         sickbeard.NZBSRUS_HASH = nzbs_r_us_hash.strip()

@@ -21,6 +21,7 @@ __all__ = ['ezrss',
            'nzbmatrix',
            'nzbs_org',
            'nzbsrus',
+           'binsearch',
            'womble',
            'newzbin',
            ]
